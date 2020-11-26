@@ -117,7 +117,6 @@ class DemoTest {
         assertEquals(0, actual.getY());
     }
 
-
     @Test
     void should_mars_rover_return_0_0_W_when_turn_left_from_heading_N() {
         //given
@@ -128,6 +127,20 @@ class DemoTest {
 
         //then
         assertEquals('W', actual.getHeading());
+        assertEquals(0, actual.getX());
+        assertEquals(0, actual.getY());
+    }
+
+    @Test
+    void should_mars_rover_return_0_0_N_when_turn_left_from_heading_E() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, 'E');
+
+        //when
+        GeoInfo actual = marsRover.executeCommands("L");
+
+        //then
+        assertEquals('N', actual.getHeading());
         assertEquals(0, actual.getX());
         assertEquals(0, actual.getY());
     }

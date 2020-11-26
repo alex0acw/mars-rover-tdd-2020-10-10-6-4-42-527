@@ -34,6 +34,20 @@ class DemoTest {
     }
 
     @Test
+    void should_mars_rover_return_0_minus1_S_when_move_forward_from_heading_S() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, 'S');
+
+        //when
+        GeoInfo actual = marsRover.executeCommands("M");
+
+        //then
+        assertEquals('S', actual.getHeading());
+        assertEquals(0, actual.getX());
+        assertEquals(-1, actual.getY());
+    }
+
+    @Test
     void should_mars_rover_return_0_0_E_when_turn_right_from_heading_N() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, 'N');

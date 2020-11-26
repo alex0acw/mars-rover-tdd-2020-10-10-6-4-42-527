@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DemoTest {
     @Test
-    void should_mars_rover_return_0_1_N_when_move_forward() {
+    void should_mars_rover_return_0_1_N_when_move_forward_from_heading_N() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, 'N');
 
@@ -20,7 +20,7 @@ class DemoTest {
     }
 
     @Test
-    void should_mars_rover_return_0_0_E_when_turn_right() {
+    void should_mars_rover_return_0_0_E_when_turn_right_from_heading_N() {
         //given
         MarsRover marsRover = new MarsRover(0, 0, 'N');
 

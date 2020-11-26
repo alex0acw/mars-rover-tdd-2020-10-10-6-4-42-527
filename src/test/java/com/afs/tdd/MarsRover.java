@@ -20,8 +20,51 @@ public class MarsRover {
             case 'M':
                 this.geoInfo = moveForward(this.geoInfo);
                 break;
+            case 'R':
+            case 'L':
+                this.geoInfo = turn(this.geoInfo, command);
+                break;
         }
         return this.geoInfo;
+    }
+
+    private static GeoInfo turn(GeoInfo previousState, char turnCommand) {
+        GeoInfo newGeoInfo = new GeoInfo(previousState);
+        switch (turnCommand) {
+            case 'L':
+                switch (newGeoInfo.getHeading()) {
+                    case 'N':
+                        newGeoInfo.setHeading('W');
+                        break;
+                    case 'E':
+                        newGeoInfo.setHeading('N');
+                        break;
+                    case 'S':
+                        newGeoInfo.setHeading('E');
+                        break;
+                    case 'W':
+                        newGeoInfo.setHeading('S');
+                        break;
+                }
+                break;
+            case 'R':
+                switch (newGeoInfo.getHeading()) {
+                    case 'N':
+                        newGeoInfo.setHeading('E');
+                        break;
+                    case 'E':
+                        newGeoInfo.setHeading('S');
+                        break;
+                    case 'S':
+                        newGeoInfo.setHeading('W');
+                        break;
+                    case 'W':
+                        newGeoInfo.setHeading('N');
+                        break;
+                }
+                break;
+        }
+        return newGeoInfo;
     }
 
     static private GeoInfo moveForward(GeoInfo previousState) {

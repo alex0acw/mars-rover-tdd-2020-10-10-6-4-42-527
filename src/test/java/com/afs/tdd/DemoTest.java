@@ -102,4 +102,18 @@ class DemoTest {
         assertEquals(0, actual.getX());
         assertEquals(0, actual.getY());
     }
+
+    @Test
+    void should_mars_rover_return_0_0_N_when_turn_right_from_heading_W() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, 'W');
+
+        //when
+        GeoInfo actual = marsRover.executeCommands("R");
+
+        //then
+        assertEquals('N', actual.getHeading());
+        assertEquals(0, actual.getX());
+        assertEquals(0, actual.getY());
+    }
 }

@@ -2,9 +2,20 @@ package com.afs.tdd;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class DemoTest {
     @Test
-    void write_your_first_test() {
+    void should_mars_rover_return_0_1_N_when_move_forward() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, 'N');
 
+        //when
+        GeoInfo actual = marsRover.executeCommands("M");
+
+        //then
+        assertEquals('N', actual.getHeading());
+        assertEquals(0, actual.getxCoordinate());
+        assertEquals(1, actual.getyCoordinate());
     }
 }

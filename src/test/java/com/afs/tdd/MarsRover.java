@@ -9,7 +9,38 @@ public class MarsRover {
     }
 
     public GeoInfo executeCommands(String commands) {
-        return new GeoInfo(0, 0, 'N');
+        for (char command : commands.toCharArray()) {
+            this.geoInfo = this.executeCommand(command);
+        }
+        return this.geoInfo;
+    }
+
+    public GeoInfo executeCommand(char command) {
+        switch (command) {
+            case 'M':
+                this.geoInfo = moveForward(this.geoInfo);
+                break;
+        }
+        return this.geoInfo;
+    }
+
+    static private GeoInfo moveForward(GeoInfo previousState) {
+        GeoInfo newGeoInfo = new GeoInfo(previousState);
+        switch (previousState.getHeading()) {
+            case 'N':
+                newGeoInfo.setY(newGeoInfo.getY() + 1);
+                break;
+            case 'E':
+                newGeoInfo.setX(newGeoInfo.getX() + 1);
+                break;
+            case 'S':
+                newGeoInfo.setY(newGeoInfo.getY() - 1);
+                break;
+            case 'W':
+                newGeoInfo.setX(newGeoInfo.getX() - 1);
+                break;
+        }
+        return newGeoInfo;
     }
 
 }

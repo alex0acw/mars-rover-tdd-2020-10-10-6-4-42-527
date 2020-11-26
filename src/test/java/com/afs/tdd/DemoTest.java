@@ -15,7 +15,7 @@ class DemoTest {
 
         //then
         assertEquals('N', actual.getHeading());
-        assertEquals(0, actual.getxCoordinate());
-        assertEquals(1, actual.getyCoordinate());
+        assertEquals(0, actual.getX());
+        assertEquals(1, actual.getY());
     }
 }

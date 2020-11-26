@@ -1,30 +1,36 @@
 package com.afs.tdd;
 
 public class GeoInfo {
-    private int xCoordinate;
-    private int yCoordinate;
+    private int x;
+    private int y;
     private char heading;
 
-    public GeoInfo(int xCoordinate, int yCoordinate, char heading) {
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
+    public GeoInfo(int x, int y, char heading) {
+        this.x = x;
+        this.y = y;
         this.heading = heading;
     }
 
-    public int getxCoordinate() {
-        return xCoordinate;
+    public GeoInfo(GeoInfo other) {
+        this.x = other.x;
+        this.y = other.y;
+        this.heading = other.heading;
     }
 
-    public void setxCoordinate(int xCoordinate) {
-        this.xCoordinate = xCoordinate;
+    public int getX() {
+        return x;
     }
 
-    public int getyCoordinate() {
-        return yCoordinate;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public void setyCoordinate(int yCoordinate) {
-        this.yCoordinate = yCoordinate;
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     public char getHeading() {

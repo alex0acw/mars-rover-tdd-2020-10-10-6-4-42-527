@@ -10,12 +10,12 @@ public class MarsRover {
 
     public GeoInfo executeCommands(String commands) {
         for (char command : commands.toCharArray()) {
-            this.geoInfo = this.executeCommand(command);
+            this.executeCommand(command);
         }
         return this.geoInfo;
     }
 
-    public GeoInfo executeCommand(char command) {
+    public void executeCommand(char command) {
         switch (command) {
             case 'M':
                 this.geoInfo = moveForward(this.geoInfo);
@@ -25,7 +25,6 @@ public class MarsRover {
                 this.geoInfo = turn(this.geoInfo, command);
                 break;
         }
-        return this.geoInfo;
     }
 
     private static GeoInfo turn(GeoInfo previousState, char turnCommand) {

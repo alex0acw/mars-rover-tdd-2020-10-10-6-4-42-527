@@ -5,24 +5,21 @@ public class MarsRover {
 
     public MarsRover(int xCoordinate, int yCoordinate, char headingChar) {
         this.geoInfo = new GeoInfo(xCoordinate, yCoordinate, Direction.fromShorthand(headingChar));
-
     }
 
-    public GeoInfo executeCommands(String commands) {
-        for (char command : commands.toCharArray()) {
-            this.executeCommand(command);
-        }
-        return this.geoInfo;
+    public void moveForward() {
+        this.geoInfo = this.geoInfo.moveForward();
     }
 
-    public void executeCommand(char command) {
-        if (command == 'M') {
-            this.geoInfo = this.geoInfo.moveForward();
-        } else if (command == 'R') {
-            this.geoInfo = this.geoInfo.turnRight();
-        } else if (command == 'L') {
-            this.geoInfo = this.geoInfo.turnLeft();
-        }
+    public void turnLeft() {
+        this.geoInfo = this.geoInfo.turnLeft();
     }
 
+    public void turnRight() {
+        this.geoInfo = this.geoInfo.turnRight();
+    }
+
+    public GeoInfo getGeoInfo() {
+        return geoInfo;
+    }
 }

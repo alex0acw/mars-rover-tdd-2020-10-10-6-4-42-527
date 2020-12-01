@@ -1,11 +1,11 @@
 package com.afs.tdd;
 
 public class GeoInfo {
-    private int x;
-    private int y;
-    private char heading;
+    public final int x;
+    public final int y;
+    public final Direction heading;
 
-    public GeoInfo(int x, int y, char heading) {
+    public GeoInfo(int x, int y, Direction heading) {
         this.x = x;
         this.y = y;
         this.heading = heading;
@@ -17,27 +17,19 @@ public class GeoInfo {
         this.heading = other.heading;
     }
 
-    public int getX() {
-        return x;
+    public GeoInfo moveForward() {
+        return new GeoInfo(
+                this.x + this.heading.deltaX,
+                this.y + this.heading.deltaY,
+                this.heading);
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public GeoInfo turnLeft() {
+        return new GeoInfo(this.x, this.y, this.heading.turnLeft());
     }
 
-    public int getY() {
-        return y;
+    public GeoInfo turnRight() {
+        return new GeoInfo(this.x, this.y, this.heading.turnRight());
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public char getHeading() {
-        return heading;
-    }
-
-    public void setHeading(char heading) {
-        this.heading = heading;
-    }
 }

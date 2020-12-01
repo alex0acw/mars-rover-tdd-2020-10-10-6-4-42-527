@@ -14,9 +14,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("M");
 
         //then
-        assertEquals('N', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(1, actual.getY());
+        assertEquals('N', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(1, actual.y);
     }
 
     @Test
@@ -28,9 +28,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("M");
 
         //then
-        assertEquals('E', actual.getHeading());
-        assertEquals(1, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('E', actual.heading.shortHand);
+        assertEquals(1, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -42,9 +42,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("M");
 
         //then
-        assertEquals('S', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(-1, actual.getY());
+        assertEquals('S', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(-1, actual.y);
     }
 
     @Test
@@ -56,9 +56,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("M");
 
         //then
-        assertEquals('W', actual.getHeading());
-        assertEquals(-1, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('W', actual.heading.shortHand);
+        assertEquals(-1, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -70,9 +70,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("R");
 
         //then
-        assertEquals('E', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('E', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -84,9 +84,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("R");
 
         //then
-        assertEquals('S', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('S', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -98,9 +98,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("R");
 
         //then
-        assertEquals('W', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('W', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -112,9 +112,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("R");
 
         //then
-        assertEquals('N', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('N', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -126,9 +126,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("L");
 
         //then
-        assertEquals('W', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('W', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -140,9 +140,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("L");
 
         //then
-        assertEquals('N', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('N', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -154,9 +154,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("L");
 
         //then
-        assertEquals('E', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('E', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -168,9 +168,9 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("L");
 
         //then
-        assertEquals('S', actual.getHeading());
-        assertEquals(0, actual.getX());
-        assertEquals(0, actual.getY());
+        assertEquals('S', actual.heading.shortHand);
+        assertEquals(0, actual.x);
+        assertEquals(0, actual.y);
     }
 
     @Test
@@ -182,8 +182,8 @@ class DemoTest {
         GeoInfo actual = marsRover.executeCommands("MRM");
 
         //then
-        assertEquals('E', actual.getHeading());
-        assertEquals(1, actual.getX());
-        assertEquals(1, actual.getY());
+        assertEquals('E', actual.heading.shortHand);
+        assertEquals(1, actual.x);
+        assertEquals(1, actual.y);
     }
 }

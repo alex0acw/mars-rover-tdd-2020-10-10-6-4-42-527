@@ -3,8 +3,8 @@ package com.afs.tdd;
 public class MarsRover {
     private GeoInfo geoInfo;
 
-    public MarsRover(int xCoordinate, int yCoordinate, char headingChar) {
-        this.geoInfo = new GeoInfo(xCoordinate, yCoordinate, Direction.fromShorthand(headingChar));
+    public MarsRover(int xCoordinate, int yCoordinate, Direction heading) {
+        this.geoInfo = new GeoInfo(xCoordinate, yCoordinate, heading);
     }
 
     public void moveForward() {
